@@ -18,8 +18,16 @@
             <li class="nav-item">
               <a class="nav-link" href="post-details.html">Post Details</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                categories
+              </a>
+              <div class="dropdown-menu">
+                {% for category in categories %}
+                <a class="dropdown-item" href="{% url 'categories' category.slug %}">{{category.title}}</a>
+                {% endfor %}
+
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Login</a>
